@@ -1,6 +1,6 @@
 # txmaya
 
-Maya tools collection. 
+Maya tools collection. Still continue updating.
 
 ## tx Random Pick
 ```python
@@ -34,4 +34,4 @@ from txmaya.modeling.texel_density_patch import TexelDensityPatch
 TexelDensityPatch.run()
 ```
 
-![img](./docs/images/RandomPick_v001.jpg "tawibox_profile")
+![img](./docs/images/ui_txRandomPick.jpg "tawibox_profile")
