@@ -1,37 +1,14 @@
-# txmaya
+txmaya
+======
 
-Maya tools collection. Still continue updating.
+A Maya tools collection. Still continue updating.
 
-## tx Random Pick
-```python
-from txmaya.modeling.random_pick import RandomPick
-RandomPick.run()
-```
+[Installation](../docs/installation.md)
+-------------------------------------------
 
-## tx File Buffer
-```python
-from txmaya.general.file_buffer import FileBuffer
-FileBuffer.run()
-```
-
-## tx Mirrorer
-```python
-from txmaya.modeling.mirrorer import Mirrorer
-Mirrorer.run()
-```
+1. Copy THE entire `txmaya` folder to your maya `$MAYA_APP_DIR`
 
 
-## tx Uv Batch Transfer
-```python
-from txmaya.modeling.uv_batch_transfer import UvBatchTransfer
-UvBatchTransfer.run()
-```
-
-## tx Texel Density Patch
-
-```python
-from txmaya.modeling.texel_density_patch import TexelDensityPatch
-TexelDensityPatch.run()
-```
-
-![img](./docs/images/ui_txRandomPick.jpg "tawibox_profile")
+- Windows: `\Users\<username>\Documents\maya\<version>`
+- Linux:    `$HOME/maya/<version>`
+- Mac OS X: `$HOME/Library/Preferences/Autodesk/maya/<version>`
