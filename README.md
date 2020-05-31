@@ -34,4 +34,4 @@ from txmaya.modeling.texel_density_patch import TexelDensityPatch
 TexelDensityPatch.run()
 ```
 
-![img](./docs/images/RandomPick_v001.jpg "tawibox_profile")profile202005_256
+![img](./docs/images/RandomPick_v001.png "tawibox_profile")
