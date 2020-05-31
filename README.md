@@ -6,11 +6,13 @@ __txmaya__ is a collection of maya tools to help artists to enhance their produc
 
 ## Installation
 
-1. Copy the entire `txmaya` folder (Second `txmaya` folder under repo's root) to your maya's `$MAYA_APP_DIR` or any one of your `$PYTHONPATH`:
+1. Copy the entire `txmaya` folder (Second `txmaya` folder under repo's root) to your maya's `$MAYA_APP_DIR`:
 
     - Windows: `\Users\<username>\Documents\maya\<version>\scripts`
     - Linux:    `$HOME/maya/<version>/scripts`
     - Mac OS X: `$HOME/Library/Preferences/Autodesk/maya/<version>/scripts`
+
+    or any one of your `$PYTHONPATH`.
 
 2. Run the codes below in maya's script editor to show each tool's UI.
 
