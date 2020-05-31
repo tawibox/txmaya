@@ -1,7 +1,8 @@
 # txmaya
 
 
-__txmaya__ is a collection of maya tools to help artists to enhance their productivity. Still keep updating.
+__txmaya__ is a collection of maya tools in hopes of enhancing 3D artists' productivity. The collection will keep expanding. 
+
 
 
 ## Installation
