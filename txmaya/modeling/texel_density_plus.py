@@ -23,14 +23,14 @@ def maya_main_window():
         return wrapInstance(long(maya_main_ptr), QtWidgets.QWidget)
 
 
-class TexelDensityPatch(QtWidgets.QDialog):
+class TexelDensityPlus(QtWidgets.QDialog):
 
     dialog_instance = None
 
     @classmethod
     def run(cls):
         if not cls.dialog_instance:
-            cls.dialog_instance = TexelDensityPatch()
+            cls.dialog_instance = TexelDensityPlus()
         if cls.dialog_instance.isHidden():
             cls.dialog_instance.show()
         else:
@@ -38,9 +38,9 @@ class TexelDensityPatch(QtWidgets.QDialog):
             cls.dialog_instance.activateWindow()
 
     def __init__(self, parent=maya_main_window()):
-        super(TexelDensityPatch, self).__init__(parent)
+        super(TexelDensityPlus, self).__init__(parent)
         # set window title
-        self.setWindowTitle('tx Texel Density Patch')
+        self.setWindowTitle('tx Texel Density Plus')
         # init win size
         self.setMinimumWidth(250)
         # self.setMinimumHeight(200)
@@ -180,22 +180,22 @@ class TexelDensityPatch(QtWidgets.QDialog):
             om.MGlobal.displayWarning("Select at least 1 geo!")
 
     def showEvent(self, e):
-        super(TexelDensityPatch, self).showEvent(e)
+        super(TexelDensityPlus, self).showEvent(e)
         if self.geometry:
             self.restoreGeometry(self.geometry)
 
     def closeEvent(self, e):
-        if isinstance(self, TexelDensityPatch):
-            super(TexelDensityPatch, self).closeEvent(e)
+        if isinstance(self, TexelDensityPlus):
+            super(TexelDensityPlus, self).closeEvent(e)
             self.geometry = self.saveGeometry()
 
 
 if __name__ == '__main__':
     try:
-        TexelDensityPatch_test.close()
-        TexelDensityPatch_test.deleteLater()
+        TexelDensityPlus_test.close()
+        TexelDensityPlus_test.deleteLater()
     except:
         pass
 
-    TexelDensityPatch_test = TexelDensityPatch()
-    TexelDensityPatch_test.show()
+    TexelDensityPlus_test = TexelDensityPlus()
+    TexelDensityPlus_test.show()

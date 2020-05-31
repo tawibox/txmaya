@@ -57,13 +57,13 @@ __txmaya__ is a collection of maya tools to help artists to enhance their produc
 
     - #### tx Texel Density Patch
     
-        A tool to get selections' UV texel density and scale other selections' UV __*altogether*__ based on the td value:
+        A tool to get selections' UV texel density and scale other selections' UV __*altogether*__ based on the TD value:
     
-        ![img](./docs/images/txTexelDensityPatch_ui.jpg)
+        ![img](./docs/images/txTexelDensityPlus_ui.jpg)
     
         ```python
-        from txmaya.modeling.texel_density_patch import TexelDensityPatch
-        TexelDensityPatch.run()
+        from txmaya.modeling.texel_density_patch import TexelDensityPlus
+        TexelDensityPlus.run()
         ```
     
     - #### tx UV Batch Transfer
