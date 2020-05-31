@@ -22,7 +22,7 @@ __txmaya__ is a collection of maya tools to help artists to enhance their produc
     
     -  #### tx File Buffer
         
-        A tool allows users to export selection to a temporary and re-import back.
+        A tool allows users to export selection to a temporary folder and re-import back. Could be used for sending files in-between different mayas or cleaning up geometries.
         
         ![img](./docs/images/txFileBuffer_ui.jpg)
                 
@@ -35,7 +35,7 @@ __txmaya__ is a collection of maya tools to help artists to enhance their produc
     
     - #### tx Mirrorer
     
-        A world-space mirroring tool to mirror multiple geos and their uvs without losing transformations:
+        A world-space mirroring tool to mirror multiple geos and their UVs without losing transformations:
     
         ![img](./docs/images/txMirrorer_ui.jpg)
         
