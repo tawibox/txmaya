@@ -42,7 +42,7 @@ __txmaya__ is a collection of maya tools in hopes of enhancing 3D artists' produ
     
         ![img](./docs/images/txMirrorer_ui.jpg)
 
-        <img src="./docs/images/txMirrorer_ui.jpg">
+        <img src="./docs/images/txMirrorer_demo.gif" width="200">
 
         ![img](./docs/images/txMirrorer_demo.gif)
 
