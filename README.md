@@ -39,7 +39,9 @@ __txmaya__ is a collection of maya tools in hopes of enhancing 3D artists' produ
         A world-space mirroring tool to mirror multiple geos and their UVs without losing transformations:
     
         ![img](./docs/images/txMirrorer_ui.jpg)
-        
+
+        ![img](./docs/images/txMirrorer_demo.gif)
+
         ```python
         from txmaya.modeling.mirrorer import Mirrorer
         Mirrorer.run()
