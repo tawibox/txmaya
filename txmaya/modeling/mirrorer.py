@@ -10,7 +10,7 @@ from PySide2 import QtGui
 from shiboken2 import wrapInstance
 
 __author__ = "Xiaowei Oscar Tan"
-__version__ = '3.1.0'
+__version__ = '3.2.0'
 
 
 def maya_main_window():
@@ -94,35 +94,46 @@ class Mirrorer(QtWidgets.QDialog):
         if button.text() == "Along Z":
             mirror_channel = '.scaleZ'
 
-        current_sel = mc.ls(sl=True, long=True)
+        current_sel = mc.ls(sl=True)
         for i in current_sel:
             # get info
             name = i.split("|")[-1]
-            hierarchy = mc.listRelatives(i, fullPath=True)
+            hierarchy = mc.listRelatives(i, fullPath=True) or [""]
             hierarchy_list = hierarchy[0].split("|")
-            hierarchy_root = "|".join(hierarchy_list[:-2])
+            hierarchy_root = "|".join(hierarchy_list[:-2]) or "|"
             # do duplicate
-            i_mirror = mc.duplicate(i, name=name + "_mirror")
-            mc.parent(i_mirror, world=True)
+            i_mirror = mc.duplicate(i, name=name + "_MIRROR")
+            i_grp_temp = mc.group(empty=True, n="txMirrorer_temp")
+            mc.parent(i_mirror[0], "txMirrorer_temp")
             # do mirroring
-            i_grp_temp = mc.group(i_mirror[0], n=i_mirror[0] + "_grp_temp")
             mc.xform(i_grp_temp,
                      worldSpace=True,
                      scalePivot=[0, 0, 0],
                      rotatePivot=[0, 0, 0])
             mc.setAttr(i_grp_temp + mirror_channel, -1)
-            mc.ungroup(i_grp_temp)
             # put the mirrored back to original hierarchy
-            mc.parent(i_mirror, hierarchy_root)
+            if hierarchy_root == "|":
+                mc.parent(i_mirror[0], world=True)
+            else:
+                mc.parent(i_mirror[0], hierarchy_root)
+            mc.delete(i_grp_temp)
             # clean up scale attr, uv and normals
-            mc.makeIdentity(i_mirror[0],
-                            apply=True,
-                            preserveNormals=True,
-                            translate=False,
-                            rotate=False,
-                            scale=True,
-                            normal=False)
-            mc.polyFlipUV(i_mirror)
+            # mc.makeIdentity(i_mirror[0],
+            #                 apply=True,
+            #                 preserveNormals=True,
+            #                 translate=False,
+            #                 rotate=False,
+            #                 scale=True,
+            #                 normal=False)
+            # do UV flip
+            list_mirrored_mesh = mc.listRelatives(i_mirror[0],
+                                                  allDescendents=True,
+                                                  type="mesh",
+                                                  fullPath=True) or []
+            if list_mirrored_mesh:
+                for j in list_mirrored_mesh:
+                    mc.polyFlipUV(j)
+            mc.select(i_mirror[0])
 
     def showEvent(self, e):
         super(Mirrorer, self).showEvent(e)
@@ -145,11 +156,3 @@ if __name__ == '__main__':
 
     Mirrorer_test = Mirrorer()
     Mirrorer_test.show()
-
-
-
-
-
-
-
-
